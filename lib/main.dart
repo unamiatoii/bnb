@@ -1,4 +1,3 @@
-import 'package:bnb_connect/composant/weather.dart';
 import 'package:bnb_connect/pages/mainPage.dart';
 import 'package:flutter/material.dart';
 
@@ -20,13 +19,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        textTheme: TextTheme(
-          // Applique TextDecoration.none à tous les styles de texte
-          bodyLarge: TextStyle(decoration: TextDecoration.none),
-          bodyMedium: TextStyle(decoration: TextDecoration.none),
-          titleLarge: TextStyle(decoration: TextDecoration.none),
-          // Ajoutez d'autres styles de texte ici si nécessaire
-        ),
+        fontFamily: "Montserrat",
         colorScheme: ColorScheme.fromSwatch(
           primarySwatch: Colors.blue,
         ).copyWith(

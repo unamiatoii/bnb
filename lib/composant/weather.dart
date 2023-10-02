@@ -57,6 +57,7 @@ class WeatherInfoWidget extends StatelessWidget {
               Text(
                 "${weatherData!.areaName},${weatherData!.country}",
                 style: TextStyle(
+                  fontFamily: "Montserrat",
                   color: Colors.black,
                   decoration: TextDecoration.none,
                   fontSize: 35,
@@ -71,6 +72,7 @@ class WeatherInfoWidget extends StatelessWidget {
                       Text(
                         "${weatherData!.tempMax!.celsius!.truncate()}°",
                         style: TextStyle(
+                          fontFamily: "Montserrat",
                           color: Colors.black,
                           decoration: TextDecoration.none,
                           fontSize: 30,
@@ -85,6 +87,7 @@ class WeatherInfoWidget extends StatelessWidget {
                       Text(
                         "${weatherData!.tempMin!.celsius!.truncate()}°",
                         style: TextStyle(
+                          fontFamily: "Montserrat",
                           color: Colors.black,
                           decoration: TextDecoration.none,
                           fontSize: 30,
@@ -98,6 +101,7 @@ class WeatherInfoWidget extends StatelessWidget {
               Text(
                 "${weatherData!.weatherDescription}",
                 style: TextStyle(
+                  fontFamily: "Montserrat",
                   color: Colors.black,
                   decoration: TextDecoration.none,
                   fontSize: 25,
@@ -127,10 +131,11 @@ class WeatherInfoWidget extends StatelessWidget {
               Text(
                 "${weatherData!.tempFeelsLike!.celsius!.truncate()}°",
                 style: TextStyle(
+                  fontFamily: "Montserrat",
                   color: Colors.black,
                   decoration: TextDecoration.none,
                   fontSize: 70,
-                  fontWeight: FontWeight.w900,
+                  fontWeight: FontWeight.w500,
                 ),
               ),
             ],

@@ -35,6 +35,7 @@ Widget customCard(String image, String texte) {
             child: Text(
               texte,
               style: TextStyle(
+                fontFamily: "Montserrat",
                 fontSize: 25,
                 fontWeight: FontWeight.bold,
                 color: Colors.white,

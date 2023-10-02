@@ -14,8 +14,13 @@ Widget appBar(BuildContext context) {
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Image.asset(
-              "assets/images/logo.png",
+            Container(
+              width: 150,
+              height: 150,
+              child: Image.asset(
+                "assets/images/logo.png",
+                fit: BoxFit.contain, // Ajustez le mode d'ajustement de l'image
+              ),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -28,6 +33,7 @@ Widget appBar(BuildContext context) {
                 Text(
                   "Nom Hotel",
                   style: TextStyle(
+                      fontFamily: "Montserrat",
                       fontSize: 30,
                       fontWeight: FontWeight.w700,
                       color: Theme.of(context).colorScheme.onPrimary,
