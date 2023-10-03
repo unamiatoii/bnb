@@ -56,7 +56,7 @@ class WeatherInfoWidget extends StatelessWidget {
             children: [
               Text(
                 "${weatherData!.areaName},${weatherData!.country}",
-                style: TextStyle(
+                style: const TextStyle(
                   fontFamily: "Montserrat",
                   color: Colors.black,
                   decoration: TextDecoration.none,
@@ -70,8 +70,8 @@ class WeatherInfoWidget extends StatelessWidget {
                     children: [
                       Icon(Icons.arrow_upward, color: Colors.red),
                       Text(
-                        "${weatherData!.tempMax!.celsius!.truncate()}°",
-                        style: TextStyle(
+                        "${weatherData!.tempMax!.celsius!.ceil()}°",
+                        style: const TextStyle(
                           fontFamily: "Montserrat",
                           color: Colors.black,
                           decoration: TextDecoration.none,
@@ -83,10 +83,10 @@ class WeatherInfoWidget extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      Icon(Icons.arrow_downward, color: Colors.blue),
+                      const Icon(Icons.arrow_downward, color: Colors.blue),
                       Text(
-                        "${weatherData!.tempMin!.celsius!.truncate()}°",
-                        style: TextStyle(
+                        "${weatherData!.tempMin!.celsius!.ceil()}°",
+                        style: const TextStyle(
                           fontFamily: "Montserrat",
                           color: Colors.black,
                           decoration: TextDecoration.none,
@@ -100,7 +100,7 @@ class WeatherInfoWidget extends StatelessWidget {
               ),
               Text(
                 "${weatherData!.weatherDescription}",
-                style: TextStyle(
+                style: const TextStyle(
                   fontFamily: "Montserrat",
                   color: Colors.black,
                   decoration: TextDecoration.none,
@@ -129,8 +129,8 @@ class WeatherInfoWidget extends StatelessWidget {
               ),
               SizedBox(width: 10),
               Text(
-                "${weatherData!.tempFeelsLike!.celsius!.truncate()}°",
-                style: TextStyle(
+                "${weatherData!.tempFeelsLike!.celsius!.ceil()}°",
+                style: const TextStyle(
                   fontFamily: "Montserrat",
                   color: Colors.black,
                   decoration: TextDecoration.none,

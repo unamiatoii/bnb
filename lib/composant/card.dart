@@ -31,13 +31,14 @@ Widget customCard(String image, String texte) {
             ),
           ),
           Positioned(
-            bottom: 8,
+            left: 20,
+            bottom: 30,
             child: Text(
               texte,
               style: TextStyle(
                 fontFamily: "Montserrat",
                 fontSize: 25,
-                fontWeight: FontWeight.bold,
+                fontWeight: FontWeight.w600,
                 color: Colors.white,
               ),
             ),
