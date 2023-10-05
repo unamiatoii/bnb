@@ -18,6 +18,10 @@ class _MapWithRouteSearchState extends State<MapWithRouteSearch> {
 
   Location location = new Location();
 
+  double currentZoom = 3;
+  double maxZoom = 18.0; // Niveau de zoom maximal
+  double minZoom = 3.0; // Niveau de zoom minimal
+
   @override
   void initState() {
     super.initState();
@@ -72,13 +76,42 @@ class _MapWithRouteSearchState extends State<MapWithRouteSearch> {
             child: ClipRRect(
               borderRadius: BorderRadius.circular(12),
               child: FlutterMap(
+                nonRotatedChildren: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      IconButton(
+                        icon: Icon(Icons.add),
+                        onPressed: () {
+                          if (currentZoom < maxZoom) {
+                            setState(() {
+                              currentZoom += 1.0; // Augmentez le niveau de zoom
+                            });
+                          }
+                        },
+                      ),
+                      IconButton(
+                        icon: Icon(Icons.remove),
+                        onPressed: () {
+                          if (currentZoom > minZoom) {
+                            setState(() {
+                              currentZoom -= 1.0; // Diminuez le niveau de zoom
+                            });
+                          }
+                        },
+                      ),
+                    ],
+                  ),
+                ],
                 options: MapOptions(
                   center: currentLocation != null
                       ? LatLng(currentLocation!.latitude!,
                           currentLocation!.longitude!)
                       : LatLng(5.3094,
                           -4.0197), // Utilisez la position de l'utilisateur si disponible, sinon utilisez une position par défaut.
-                  zoom: 9.2,
+                  zoom: currentZoom, // Utilisez le niveau de zoom actuel
+                  maxZoom: maxZoom, // Définissez le niveau de zoom maximal
+                  minZoom: minZoom, // Définissez le niveau de zoom minimal
                 ),
                 children: [
                   TileLayer(
@@ -101,9 +134,15 @@ class _MapWithRouteSearchState extends State<MapWithRouteSearch> {
                             Marker(
                               width: 40,
                               height: 40,
-                              point: LatLng(currentLocation!.latitude!,
-                                  currentLocation!.longitude!),
-                              builder: (ctx) => Icon(Icons.location_on),
+                              point: currentLocation != null
+                                  ? LatLng(currentLocation!.latitude!,
+                                      currentLocation!.longitude!)
+                                  : LatLng(5.3094, -4.0197),
+                              builder: (ctx) => Icon(
+                                Icons.location_on,
+                                size: 50,
+                                color: Colors.red,
+                              ),
                             ),
                           ]
                         : [],
